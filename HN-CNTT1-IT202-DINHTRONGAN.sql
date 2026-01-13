@@ -88,7 +88,7 @@ call GetStudentsIT();
 drop view if exists  View_StudentCountByDept;
 create view View_StudentCountByDept as
     select d.DeptName,count(S.DeptID) as total_student  from department d
-join Student join Student S on d.DeptID = S.DeptID
+join Student S on d.DeptID = S.DeptID
 group by d.DeptName;
 select * from View_StudentCountByDept;
 select * from View_StudentCountByDept
